@@ -3,53 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Event RSVP</title>
-    <style>
-        body { background:#00bbff }
-        .card { border-radius:8px }
-        .att-badge { min-width:82px; text-align:center }
-    </style>
 </head>
 <body>
-    <div class="container py-5">
-        <h1 class="mb-2">Event RSVP</h1>
-        <p class="lead text-light mb-4">Quickly register your attendance — names appear below as people respond.</p>
+    <button id="lever" class="lever" aria-pressed="true" title="Hide page">⚙</button>
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <header class="text-center mb-4">
+                    <h1 class="mb-1">You're Invited</h1>
+                    <p class="text-muted">RSVP to let us know if you'll attend.</p>
+                </header>
 
-        <div class="card p-4 mb-4">
-            <form id="rsvpForm" class="row gx-2 gy-2 align-items-end">
-                <div class="col-md-6">
-                    <label for="nameInput" class="form-label">Name</label>
-                    <input id="nameInput" class="form-control" placeholder="Your name" required>
-                </div>
+                <section class="card mb-4 p-4 shadow-sm">
+                    <form id="rsvpForm" class="row g-2 align-items-end">
+                        <div class="col-sm-7">
+                            <label for="nameInput" class="form-label visually-hidden">Your name</label>
+                            <input id="nameInput" class="form-control form-control-lg" placeholder="Your full name" autocomplete="name">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="attendSelect" class="form-label visually-hidden">Attendance</label>
+                            <select id="attendSelect" class="form-select form-select-lg">
+                                <option value="yes">Yes — I'll attend</option>
+                                <option value="no">No — I can't make it</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
+                    </form>
+                </section>
 
-                <div class="col-md-3">
-                    <label for="attendSelect" class="form-label">Attending</label>
-                    <select id="attendSelect" class="form-select">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
+                <section class="card p-3 shadow-sm mb-4">
+                    <div id="summary" class="mb-2 text-muted">No responses yet</div>
+                    <ul id="attendeesList" class="list-group list-group-flush"></ul>
+                </section>
 
-                <div class="col-md-3">
-                    <button type="submit" class="btn btn-primary w-100">Submit</button>
-                </div>
-            </form>
+                <footer class="text-center text-muted small">
+                    Built with simple client-side state — no backend required.
+                </footer>
+            </div>
         </div>
+    </main>
 
-        <div id="summary" class="mb-3"></div>
-        <h2 class="h5 mb-2">List of attendees</h2>
-        <ul id="attendeesList" class="list-group mb-3"></ul>
-
-        
-    </div>
-
-    <!-- RSVP behavior moved to external JS -->
     <script src="js/script.js"></script>
 </body>
 </html>
