@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Event RSVP</title>
+    <style>
+        body { background:#00bbff }
+        .card { border-radius:8px }
+        .att-badge { min-width:82px; text-align:center }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Event RSVP</h1>
+
+        <div class="card p-4 mb-4">
+            <form id="rsvpForm" class="row gx-2 gy-2 align-items-end">
+                <div class="col-md-6">
+                    <label for="nameInput" class="form-label">Name</label>
+                    <input id="nameInput" class="form-control" placeholder="Your name" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="attendSelect" class="form-label">Attending</label>
+                    <select id="attendSelect" class="form-select">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="summary" class="mb-3"></div>
+        <h2 class="h5 mb-2">List of attendees</h2>
+        <ul id="attendeesList" class="list-group mb-3"></ul>
+
+        <div class="card p-3">
+            <strong>Teaching: state & conditional rendering</strong>
+            <p class="small text-muted mb-2">The live <code>state</code> object updates on submit; the list renders conditionally based on that state.</p>
+            <pre id="stateDump" class="small bg-light p-2" style="max-height:160px; overflow:auto; border-radius:4px;"></pre>
+        </div>
+    </div>
+
+    <!-- RSVP behavior moved to js/js.scripts -->
+</body>
+</html>
