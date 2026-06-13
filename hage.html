@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Event RSVP</title>
@@ -11,11 +15,11 @@
         .card { border-radius:8px }
         .att-badge { min-width:82px; text-align:center }
     </style>
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="container py-5">
-        <h1 class="mb-4">Event RSVP</h1>
+        <h1 class="mb-2">Event RSVP</h1>
+        <p class="lead text-light mb-4">Quickly register your attendance — names appear below as people respond.</p>
 
         <div class="card p-4 mb-4">
             <form id="rsvpForm" class="row gx-2 gy-2 align-items-end">
@@ -42,13 +46,10 @@
         <h2 class="h5 mb-2">List of attendees</h2>
         <ul id="attendeesList" class="list-group mb-3"></ul>
 
-        <div class="card p-3">
-            <strong>Teaching: state & conditional rendering</strong>
-            <p class="small text-muted mb-2">The live <code>state</code> object updates on submit; the list renders conditionally based on that state.</p>
-            <pre id="stateDump" class="small bg-light p-2" style="max-height:160px; overflow:auto; border-radius:4px;"></pre>
-        </div>
+        
     </div>
 
-    <!-- RSVP behavior moved to js/js.scripts -->
+    <!-- RSVP behavior moved to external JS -->
+    <script src="js/script.js"></script>
 </body>
 </html>
